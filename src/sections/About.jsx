@@ -10,8 +10,8 @@ export default function About() {
           {/* Text */}
           <div className="space-y-5">
             <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Building software that{' '}
-              <span className="text-indigo-400">actually ships</span>
+              Always curious,{' '}
+              <span className="text-indigo-400">always building</span>
             </h2>
             <p className="text-zinc-300 leading-relaxed text-base sm:text-lg">
               {personal.bio}

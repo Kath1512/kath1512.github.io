@@ -50,7 +50,7 @@ export default function Hero() {
 
         {/* Bio */}
         <p className="fade-in-up delay-300 text-zinc-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-10">
-          {personal.bio}
+          {personal.heroBio}
         </p>
 
         {/* CTA row */}

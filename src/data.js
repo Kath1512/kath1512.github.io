@@ -3,8 +3,9 @@
 
 export const personal = {
   name: "Hoang Kien Trinh",
-  tagline: "Software Engineer",
-  bio: "I am a Computer Science student at the University of Sydney, passionate about full-stack development, system architecture, and deep learning. I enjoy bridging the gap between sophisticated backends and intuitive user interfaces.",
+  tagline: "I make things. Then I make them faster.",
+  heroBio: "CS student at USYD who builds things from scratch — not because it's efficient, but because I actually want to know how they work.",
+  bio: "CS student at the University of Sydney building from the ground up — from hardware-aware C++20 matching engines to deep learning models derived from first principles. Focused on the engineering behind low-latency systems, market microstructure, and high-frequency trading infrastructure.",
   location: "Sydney, NSW",
   email: "trinhhoangkien1512@gmail.com",
   github: "https://github.com/kath1512",
@@ -14,17 +15,31 @@ export const personal = {
 
 export const aboutStats = [
   { label: "University", value: "USYD" },
-  { label: "Awards", value: "3+" },
-  { label: "Focus", value: "Full-Stack" }
+  { label: "Scholarship", value: "AUD 40K" },
+  { label: "Focus", value: "Low-Latency" }
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "Custom CNN from Scratch",
-    summary: "Deep learning model built from first principles using only Python and NumPy.",
+    title: "Low-Latency C++ Order Book",
+    summary: "Price-time priority matching engine with lock-free event pipeline, built from scratch in C++20 for HFT research.",
     achievements: [
-      "Derived and implemented Convolutional layers and backpropagation using Linear Algebra and Multivariable Calculus.",
+      "Implemented GTC, IOC, and FOK order types with correct maker-pricing semantics, O(log n) level access via std::map, and O(1) FIFO matching via std::list within each price level.",
+      "Built a lock-free ring buffer event pipeline using atomic acquire/release ordering and alignas(64) cache-line padding to eliminate false sharing between producer and consumer threads.",
+      "Designed a binary wire protocol with fixed-size structs and a data-driven test suite of 17+ scenarios covering multi-level sweeps, partial fills, cancels, and order modifications.",
+    ],
+    tags: ["C++20", "Systems Programming", "HFT", "Low-Latency"],
+    github: "https://github.com/Kath1512/MyOrderBook",
+    demo: null,
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Custom CNN from Scratch",
+    summary: "Deep learning model built from first principles using only Python and NumPy — no frameworks.",
+    achievements: [
+      "Derived and implemented convolutional layers and backpropagation by hand using Linear Algebra and Multivariable Calculus.",
       "Applied Xavier/He weight initialization and engineered a custom data pipeline for image normalization.",
       "Achieved 93.8% training and 89.4% test accuracy on the Fashion-MNIST dataset."
     ],
@@ -35,7 +50,21 @@ export const projects = [
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
+    title: "GPT-2 Language Model",
+    summary: "GPT-2 architecture (124M parameter config) implemented from scratch in PyTorch — every component hand-built, no high-level abstractions.",
+    achievements: [
+      "Built a custom BPE-style tokenizer with vocabulary construction and special-token handling, then implemented token and positional embeddings feeding into a sliding-window dataset pipeline.",
+      "Implemented causal multi-head attention from scratch using tensor reshaping (b, tokens, heads, head_dim) with registered-buffer causal masks — no per-head loops, correct batched inference.",
+      "Assembled stacked transformer blocks (pre-norm LayerNorm, GELU feed-forward, residual connections) into a full GPTModel and trained end-to-end with cross-entropy loss and greedy text generation.",
+    ],
+    tags: ["Python", "PyTorch", "Deep Learning", "Transformers", "NLP"],
+    github: "https://github.com/Kath1512/My_First_LLM_Pytorch",
+    demo: null,
+    featured: true,
+  },
+  {
+    id: 5,
     title: "Full-Stack Task Management",
     summary: "Scalable staff and project management system with microservice-like orchestration.",
     achievements: [
@@ -49,9 +78,9 @@ export const projects = [
     featured: true,
   },
   {
-    id: 3,
+    id: 6,
     title: "Real-Time Messenger",
-    summary: "Low-latency full-stack chat application with bidirectional real-time communication.",
+    summary: "Full-stack chat application with bidirectional real-time communication.",
     achievements: [
       "Developed chat infrastructure utilizing Socket.io for real-time bidirectional messaging.",
       "Implemented JWT authentication and secure password hashing with MongoDB.",
@@ -81,8 +110,8 @@ export const experience = [
     company: "University of Sydney",
     period: "Current",
     description:
-      "Majoring in Computer Science. Awarded the prestigious Vice-Chancellor’s International Scholarship.",
-    tech: ["Algorithms", "Data Structures", "System Design", "Machine Learning"],
+      "Majoring in Computer Science. Recipient of the Vice-Chancellor’s International Scholarship (AUD 40,000). Coursework spans algorithms, systems design, probability, and machine learning.",
+    tech: ["Algorithms", "Probability & Statistics", "System Design", "Machine Learning"],
   }
 ];
 
@@ -114,9 +143,10 @@ export const achievements = [
 ];
 
 export const skills = {
-  Languages: ["C#", "Python", "JavaScript", "TypeScript", "Java", "SQL", "C++", "HTML/CSS"],
+  "Systems & Concurrency": ["C++20", "Lock-free Structures", "Atomic Memory Ordering", "Cache Optimization", "RAII", "Move Semantics", "CMake"],
+  "Quant & Math": ["Market Microstructure", "Order Books", "Probability Theory", "Market Making"],
+  Languages: ["C++", "Python", "C#", "Java", "JavaScript", "TypeScript", "SQL"],
   "Frameworks & Libs": [".NET Core", "Angular", "React", "Node.js", "NumPy", "Pandas"],
   Infrastructure: ["Docker", "Linux", "Git"],
   Databases: ["PostgreSQL", "Redis", "MongoDB"],
-  "Web Core": ["REST APIs", "Socket.io"],
 };
